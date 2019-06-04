@@ -1,5 +1,6 @@
-# graphql-go
-his example shows how to implement a **TODO-app as a CLI tool** with Golang and Prisma.
+# REST API Example
+
+This example shows how to implement a **REST (HTTP) API** using the [Gin Web Framework](https://github.com/gin-gonic/gin) and Prisma.
 
 ## How to use
 
@@ -7,14 +8,14 @@ his example shows how to implement a **TODO-app as a CLI tool** with Golang and 
 
 Clone the repository:
 
-```bash
-git clone https://github.com/flavioespinoza/graphql-go.git
+```
+git clone git@github.com:prisma/prisma-examples.git
 ```
 
 Ensure dependencies are available and up-to-date:
 
-```bash
-cd prisma-examples/go/cli-app
+```
+cd prisma-examples/go/rest-gin
 dep ensure -update
 ```
 
@@ -22,7 +23,7 @@ dep ensure -update
 
 To run the example, you need the Prisma CLI. Please install it via Homebrew or [using another method](https://www.prisma.io/docs/prisma-cli-and-configuration/using-the-prisma-cli-alx4/#installation):
 
-```bash
+```
 brew install prisma
 brew tap
 ```
@@ -31,7 +32,7 @@ brew tap
 
 For this example, you'll use a free _demo database_ (AWS Aurora) hosted in Prisma Cloud. To set up your database, run:
 
-```bash
+```
 prisma deploy
 ```
 
@@ -83,29 +84,41 @@ Then, follow these steps in the interactive CLI wizard:
 
 You can now use [Prisma Admin](https://www.prisma.io/docs/prisma-admin/overview-el3e/) to view and edit your data by appending `/_admin` to your Prisma endpoint.
 
-### 4. Use the CLI app
+### 4. Start the REST API server
 
-```bash
+```
 go run main.go
 ```
 
-#### Add a `Todo` item
+The server is now running on `http://localhost:8080`. You can send the API requests implemented in `main.go`, e.g. [`http://localhost:8080/feed`](http://localhost:8080/feed).
 
-```bash
-go run main.go create Groceries
-```
+### 5. Using the REST API
 
-#### List all `Todo` items
+#### `GET`
 
-```bash
-go run main.go list
-```
+- `/post/:id`: Fetch a single post by its `id`
+- `/feed`: Fetch all _published_ posts
+- `/filterPosts?searchString={searchString}`: Filter posts by `title` or `content`
 
-#### Delete a `Todo` item
+#### `POST`
 
-```bash
-go run main.go delete Groceries
-```
+- `/post`: Create a new post
+  - Body:
+    - `title: String` (required): The title of the post
+    - `content: String` (optional): The content of the post
+    - `authorEmail: String` (required): The email of the user that creates the post
+- `/user`: Create a new user
+  - Body:
+    - `email: String` (required): The email address of the user
+    - `name: String` (optional): The name of the user
+
+#### `PUT`
+
+- `/publish/:id`: Publish a post by its `id`
+
+#### `DELETE`
+  
+- `/post/:id`: Delete a post by its `id`
 
 ## Next steps
 

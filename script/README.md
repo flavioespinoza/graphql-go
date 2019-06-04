@@ -1,5 +1,6 @@
-# graphql-go
-his example shows how to implement a **TODO-app as a CLI tool** with Golang and Prisma.
+# Simple Golang Script Example
+
+This example shows how to use the Prisma client in a **simple Golang script** to read and write data in a database.
 
 ## How to use
 
@@ -7,14 +8,14 @@ his example shows how to implement a **TODO-app as a CLI tool** with Golang and 
 
 Clone the repository:
 
-```bash
-git clone https://github.com/flavioespinoza/graphql-go.git
+```
+git clone git@github.com:prisma/prisma-examples.git
 ```
 
 Ensure dependencies are available and up-to-date:
 
-```bash
-cd prisma-examples/go/cli-app
+```
+cd prisma-examples/go/script
 dep ensure -update
 ```
 
@@ -22,7 +23,7 @@ dep ensure -update
 
 To run the example, you need the Prisma CLI. Please install it via Homebrew or [using another method](https://www.prisma.io/docs/prisma-cli-and-configuration/using-the-prisma-cli-alx4/#installation):
 
-```bash
+```
 brew install prisma
 brew tap
 ```
@@ -31,7 +32,7 @@ brew tap
 
 For this example, you'll use a free _demo database_ (AWS Aurora) hosted in Prisma Cloud. To set up your database, run:
 
-```bash
+```
 prisma deploy
 ```
 
@@ -83,28 +84,12 @@ Then, follow these steps in the interactive CLI wizard:
 
 You can now use [Prisma Admin](https://www.prisma.io/docs/prisma-admin/overview-el3e/) to view and edit your data by appending `/_admin` to your Prisma endpoint.
 
-### 4. Use the CLI app
+### 4. Run the script
 
-```bash
+Execute the script with this command: 
+
+```
 go run main.go
-```
-
-#### Add a `Todo` item
-
-```bash
-go run main.go create Groceries
-```
-
-#### List all `Todo` items
-
-```bash
-go run main.go list
-```
-
-#### Delete a `Todo` item
-
-```bash
-go run main.go delete Groceries
 ```
 
 ## Next steps
