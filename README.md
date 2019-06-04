@@ -1,7 +1,9 @@
 # graphql-go
-his example shows how to implement a **TODO-app as a CLI tool** with Golang and Prisma.
+Implement a **TODO-app** as a **CLI tool** using:
+- [Golang](https://golang.org/)
+- [Prisma](https://prisma.io/)
 
-## How to use
+## Getting Started
 
 ### 1. Download example & install dependencies
 
@@ -41,6 +43,7 @@ Then, follow these steps in the interactive CLI wizard:
 1. **Authenticate** with Prisma Cloud in your browser (if necessary)
 1. Back in your terminal, **confirm all suggested values**
 
+### 3.1 Docker Alternative
 <details>
  <summary>Alternative: Run Prisma locally via Docker</summary>
 
@@ -84,25 +87,23 @@ Then, follow these steps in the interactive CLI wizard:
 You can now use [Prisma Admin](https://www.prisma.io/docs/prisma-admin/overview-el3e/) to view and edit your data by appending `/_admin` to your Prisma endpoint.
 
 ### 4. Use the CLI app
-
+Run using go
 ```bash
 go run main.go
 ```
 
-#### Add a `Todo` item
+Add a `Todo` item
 
 ```bash
 go run main.go create Groceries
 ```
 
-#### List all `Todo` items
-
+List all `Todo` items
 ```bash
 go run main.go list
 ```
 
-#### Delete a `Todo` item
-
+Delete a `Todo` item
 ```bash
 go run main.go delete Groceries
 ```
