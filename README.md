@@ -16,7 +16,7 @@ git clone https://github.com/flavioespinoza/graphql-go.git
 Ensure dependencies are available and up-to-date:
 
 ```bash
-cd prisma-examples/go/cli-app
+cd graphql-go/cli-app
 dep ensure -update
 ```
 
